@@ -48,6 +48,13 @@ bar-foo-quux
 >>> seq(-10, 40, 100) | list
 [-10, 30, 70]
 
+
+>>> echo('punt') | list
+['punt']
+
+>>> sum(yes(6) | head(7))
+42
+
 '''
 
 import itertools
