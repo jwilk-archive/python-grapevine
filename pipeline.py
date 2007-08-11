@@ -20,6 +20,8 @@
 >>> ['foo', 'bar', 'quux'] | cut[-2:] | list
 ['oo', 'ar', 'ux']
 
+>>> sum(xrange(100) | select[i] | tuple != (range(100)[i],) for i in xrange(-3, 4))
+0
 >>> sum(xrange(100) | select[i:j:k] | list != range(100)[i:j:k] for i in xrange(-3, 4) for j in xrange(-3, 4) for k in xrange(-3, 4) if k != 0)
 0
 
@@ -266,9 +268,15 @@ class _select(Pipe):
 	
 	__slots__ = ['slice']
 
-	def __init__(self, slice):
+	def __init__(self, slice_):
 		Pipe.__init__(self)
-		self.slice = slice
+		if isinstance(slice_, int):
+			if slice_ == -1:
+				slice_ = slice(-1, None)
+			else:
+				slice_ = slice(slice_, slice_ + 1)
+		[][slice_]
+		self.slice = slice_
 
 	def _select(self, iterable):
 
@@ -289,7 +297,6 @@ class _select(Pipe):
 			return result.pop(), result
 
 		slice = self.slice
-		[][self.slice]
 		start, stop, step = (slice.start or 0, slice.stop, slice.step or 1)
 		if step >= 0 and start >= 0:
 			iterator = iter(iterable)
