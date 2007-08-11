@@ -55,6 +55,13 @@ bar-foo-quux
 >>> sum(yes(6) | head(7))
 42
 
+>>> ('foo', 'bar', 'quux') | nl | list
+[(1, 'foo'), (2, 'bar'), (3, 'quux')]
+>>> ('foo', 'bar', 'quux') | nl1 | list
+[(1, 'foo'), (2, 'bar'), (3, 'quux')]
+>>> ('foo', 'bar', 'quux') | nl0 | list
+[(0, 'foo'), (1, 'bar'), (2, 'quux')]
+
 '''
 
 import itertools
@@ -414,14 +421,23 @@ def yes(object):
 class nl(Pipe):
 
 	__slots__ = []
+	start = 0
 
 	def __init__(self, *iterables):
 		if iterables:
-			Pipe.__init__(self, enumerate(_chain(iterables)))
+			iterator = enumerate(_chain((xrange(self.start),) + iterables))
+			for i in xrange(self.start):
+				iterator.next()
+			Pipe.__init__(self, iterator)
 		else:
 			Pipe.__init__(self)
 
-nl = nl()
+class nl1(nl):
+	start = 1
+
+nl0 = nl()
+nl1 = nl1()
+nl = nl1
 
 def wc(iterable):
 	try:
