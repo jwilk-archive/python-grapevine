@@ -38,7 +38,7 @@ bar-foo-quux
 >>> cat([1, 2, 3, 3, 2, 1]) | zuniq | list
 [1, 2, 3]
 
->>> cat([1,2,3,42]) | wc
+>>> cat([1, 2, 3, 42]) | wc
 4
 
 >>> seq(5) | list
