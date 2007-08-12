@@ -65,6 +65,12 @@ bar-foo-quux
 3
 >>> cat(None for x in xrange(0, 7) for y in xrange(0, x) for z in xrange(y, x)) | wc
 56
+
+>>> tmp = []
+>>> cat(tmp.__iadd__([x]) for x in xrange(5)) | slurp
+>>> tmp
+[0, 1, 2, 3, 4]
+>>> del tmp
 '''
 
 import itertools
