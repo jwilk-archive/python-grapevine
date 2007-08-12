@@ -453,13 +453,9 @@ def wc(iterable):
 	except TypeError:
 		pass
 	i = 0
-	iterator = iter(iterable)
-	try:
-		while True:
-			iterator.next()
-			i += 1
-	except StopIteration:
-		return i
+	for item in iterable:
+		i += 1
+	return i
 
 def slurp(iterable):
 	for x in iterable:
