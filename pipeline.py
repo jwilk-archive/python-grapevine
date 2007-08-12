@@ -48,7 +48,6 @@ bar-foo-quux
 >>> seq(-10, 40, 100) | list
 [-10, 30, 70]
 
-
 >>> echo('punt') | list
 ['punt']
 
