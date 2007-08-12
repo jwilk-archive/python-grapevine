@@ -66,7 +66,7 @@ bar-foo-quux
 
 import itertools
 import re
-import inspect
+import sys
 import types
 
 class BrokenPipe(Exception):
@@ -81,9 +81,6 @@ class _singleton(object):
 	def __repr__(self):
 		return '%s.%s' % (self.__module__, self.__class__.__name__)
 
-def _get_frame_locals(frame):
-	return inspect.getargvalues(frame)[3]
-
 class STDIN(_singleton):
 
 	__slots__ = []
@@ -92,15 +89,17 @@ class STDIN(_singleton):
 		return self
 	
 	def next(self):
+		frame = sys._getframe()
 		try:
-			for frame_info in inspect.stack():
+			while frame:
 				try:
-					iterator = _get_frame_locals(frame_info[0])[STDIN]
+					iterator = frame.f_locals[STDIN]
 				except KeyError:
+					frame = frame.f_back
 					continue
 				return iterator.next()
 		finally:
-			frame_info = None
+			frame = None
 			iterator = None
 		raise BrokenPipe()
 
@@ -118,7 +117,7 @@ def _feed_iterator(iterator, stdin):
 		generator = iterator
 	else:
 		generator = (x for x in iterator)
-	_get_frame_locals(generator.gi_frame)[STDIN] = iter(stdin)
+	generator.gi_frame.f_locals[STDIN] = iter(stdin)
 	return generator
 
 def _chain(iterables):
