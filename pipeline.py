@@ -324,11 +324,7 @@ class _select(Pipe):
 			iterator = iter(iterable)
 			if stop is None or stop >= 0:
 				return itertools.islice(iterator, start, stop, step)
-			try:
-				for x in xrange(start):
-					iterator.next()
-			except StopIteration:
-				return ()
+			iterator = itertools.islice(iterator, start, None)
 			length, result = _step_select(step, iterator)
 			del result[max(0, stop + length + step - 1) // step:]
 			return result
