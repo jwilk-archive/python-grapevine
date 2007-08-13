@@ -71,6 +71,9 @@ bar-foo-quux
 >>> tmp
 [0, 1, 2, 3, 4]
 >>> del tmp
+
+>>> xrange(7) | pipeline.split(3) | list
+[(0, 1, 2), (3, 4, 5), (6,)]
 '''
 
 import itertools
@@ -483,5 +486,27 @@ class leak(object):
 			return object
 		else:
 			return leak()
+
+class split(Pipe):
+
+	__slots__ = ['n']
+
+	def __init__(self, n):
+		if n >= 1:
+			self.n = n
+		else:
+			raise TypeError()
+	
+	def _split(self, iterable):
+		iterator = iter(iterable)
+		while 1:
+			tup = tuple(itertools.islice(iterator, self.n))
+			if tup:
+				yield tup
+			else:
+				return
+
+	def __call__(self, iterable):
+		return Pipe(self._split(iterable))
 
 # vim:ts=4 sw=4 noet
