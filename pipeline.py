@@ -72,7 +72,7 @@ bar-foo-quux
 [0, 1, 2, 3, 4]
 >>> del tmp
 
->>> xrange(7) | pipeline.split(3) | list
+>>> xrange(7) | split(3) | list
 [(0, 1, 2), (3, 4, 5), (6,)]
 '''
 
