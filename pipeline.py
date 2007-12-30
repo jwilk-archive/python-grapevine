@@ -77,6 +77,7 @@ bar-foo-quux
 '''
 
 import itertools
+import operator
 import re
 import sys
 import types
@@ -391,14 +392,11 @@ class uniq(Pipe):
 
 	@classmethod
 	def _uniq(self, iterable):
-		prev = first = 1
-		for item in iterable:
-			if not first and item == prev:
-				continue
-			yield item
-			prev = item
-			first = 0
-	
+		return itertools.imap(
+			operator.itemgetter(0),
+			itertools.groupby(iterable)
+		)
+
 	def __init__(self, *iterables):
 		if iterables:
 			Pipe.__init__(self, self._uniq(_chain(iterables)))
