@@ -96,7 +96,7 @@ class _singleton(object):
 
 class STDIN(_singleton):
 
-	__slots__ = []
+	__slots__ = ()
 
 	def __iter__(self):
 		return self
@@ -121,7 +121,6 @@ class STDIN(_singleton):
 	
 	def __cmp__(self, other):
 		return self.__class__ == other.__class__
-
 
 STDIN = STDIN()
 
@@ -203,6 +202,8 @@ class Pipe(object):
 
 class dev_null(_singleton, Pipe):
 
+	__slots__ = ()
+
 	def __init__(self):
 		Pipe.__init__(self, ())
 
@@ -210,7 +211,7 @@ dev_null = dev_null()
 
 class cat(Pipe):
 	
-	__slots__ = []
+	__slots__ = ()
 
 	def __call__(self, *iterables):
 		iterable = _chain(iterables)
@@ -223,7 +224,7 @@ cat = cat()
 
 class grep(Pipe):
 
-	__slots__ = ['test']
+	__slots__ = 'test',
 	REPattern = type(re.compile(''))
 
 	def __init__(self, test, *iterables):
@@ -269,7 +270,7 @@ def _slice_repr(_slice):
 
 class _cut(Pipe):
 	
-	__slots__ = ['slice']
+	__slots__ = 'slice',
 
 	def __init__(self, slice):
 		Pipe.__init__(self)
@@ -283,7 +284,7 @@ class _cut(Pipe):
 
 class cut(_singleton):
 
-	__slots__ = []
+	__slots__ = ()
 
 	def __getitem__(self, slice):
 		return _cut(slice)
@@ -347,7 +348,7 @@ class _select(Pipe):
 
 class select(_singleton):
 
-	__slots__ = []
+	__slots__ = ()
 
 	def __getitem__(self, slice):
 		return _select(slice)
@@ -390,6 +391,8 @@ class sort(Pipe):
 
 class uniq(Pipe):
 
+	__slots__ = ()
+
 	@classmethod
 	def _uniq(self, iterable):
 		return itertools.imap(
@@ -404,6 +407,8 @@ class uniq(Pipe):
 			Pipe.__init__(self)
 
 class zuniq(uniq):
+
+	__slots__ = ()
 
 	@classmethod
 	def _uniq(self, iterable):
@@ -425,7 +430,7 @@ def yes(object):
 
 class nl(Pipe):
 
-	__slots__ = []
+	__slots__ = ()
 	start = 0
 
 	def __init__(self, *iterables):
@@ -438,6 +443,7 @@ class nl(Pipe):
 			Pipe.__init__(self)
 
 class nl1(nl):
+	__slots__ = ()
 	start = 1
 
 nl0 = nl()
@@ -477,6 +483,8 @@ def seq(x, y = None, z = None):
 
 class leak(object):
 
+	__slots__ = ()
+
 	def __new__(self, object):
 		try:
 			leak = object.leak
@@ -487,7 +495,7 @@ class leak(object):
 
 class split(Pipe):
 
-	__slots__ = ['n']
+	__slots__ = 'n',
 
 	def __init__(self, n):
 		if n >= 1:
