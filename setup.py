@@ -17,7 +17,7 @@ except ImportError:
 
 setup(
 	name = 'python-pipeline',
-	version = '0.1',
+	version = '0.1.1',
 	license = 'GNU GPL 2',
 	platforms = ['any'],
 	description = 'Iterator pipelines',
