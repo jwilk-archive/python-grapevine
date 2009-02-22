@@ -1,5 +1,5 @@
 '''
-python-pipeline lets you create pipelines of iterators.
+*python-pipeline* lets you create pipelines of iterators.
 '''
 
 classifiers = '''\
