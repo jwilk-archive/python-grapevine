@@ -10,10 +10,7 @@ Operating System :: OS Independent
 Programming Language :: Python
 Topic :: Software Development :: Libraries :: Python Modules'''.split('\n')
 
-try:
-	from setuptools import setup
-except ImportError:
-	from distutils.core import setup
+from distutils.core import setup
 
 setup(
 	name = 'python-pipeline',
