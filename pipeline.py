@@ -516,6 +516,6 @@ class split(Pipe):
 		return Pipe(self._split(iterable))
 
 __author__ = 'Jakub Wilk <ubanus@users.sf.net>'
-__version__ = '0.1.1+svn%03d' % int('$LastChangedRevision$'.split()[1])
+__version__ = '0.1.2'
 
 # vim:ts=4 sw=4 noet
