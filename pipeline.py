@@ -515,7 +515,7 @@ class split(Pipe):
 	def __call__(self, iterable):
 		return Pipe(self._split(iterable))
 
-__author__ = 'Jakub Wilk <ubanus@users.sf.net>'
+__author__ = 'Jakub Wilk <jwilk@jwilk.net>'
 __version__ = '0.1.2'
 
 # vim:ts=4 sw=4 noet
