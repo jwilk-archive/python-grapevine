@@ -368,24 +368,23 @@ def tail(n):
 
 class sort(Pipe):
 
-	__slots__ = ['key', 'cmp', 'reverse']
+	__slots__ = ['key', 'reverse']
 
 	def __init__(self, *iterables, **kwargs):
-		def _sort(iterables, key, cmp, reverse):
-			sorted_ = sorted(_chain(iterables), key = key, cmp = cmp, reverse = reverse)
+		def _sort(iterables, key, reverse):
+			sorted_ = sorted(_chain(iterables), key = key, reverse = reverse)
 			for item in sorted_:
 				yield item
 		self.key = kwargs.get('key')
-		self.cmp = kwargs.get('cmp')
 		self.reverse = kwargs.get('reverse', False)
 		if iterables:
-			Pipe.__init__(self, _sort(iterables, self.key, self.cmp, self.reverse))
+			Pipe.__init__(self, _sort(iterables, self.key, self.reverse))
 		else:
 			Pipe.__init__(self)
 
 	def __call__(self, iterable):
 		if self.iterator is None:
-			return self.__class__(iterable, key = self.key, cmp = self.cmp, reverse = self.reverse)
+			return self.__class__(iterable, key = self.key, reverse = self.reverse)
 		else:
 			return Pipe.__call__(self, iterable)
 
