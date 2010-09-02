@@ -178,7 +178,7 @@ class Pipe(object):
 				return applied
 			else:
 				try:
-					applied_iter = iter(applied)
+					iter(applied)
 				except TypeError:
 					return applied
 				else:
