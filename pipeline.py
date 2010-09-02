@@ -280,7 +280,7 @@ class _cut(Pipe):
 		return Pipe(item[self.slice] for item in iterable)
 
 	def __repr__(self):
-		return '%s.%s[%s]' % (cut.__module__, cut.__class__.__name__, slice_repr(self.slice))
+		return '%s.%s[%s]' % (cut.__module__, cut.__class__.__name__, _slice_repr(self.slice))
 
 class cut(_singleton):
 
