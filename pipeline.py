@@ -119,7 +119,7 @@ class STDIN(_singleton):
 	def __hash__(self):
 		return hash(self.__class__)
 	
-	def __cmp__(self, other):
+	def __eq__(self, other):
 		return self.__class__ == other.__class__
 
 STDIN = STDIN()
