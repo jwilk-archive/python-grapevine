@@ -14,22 +14,22 @@
 
 >>> ['foo', 'bar', 'baz'] | grep('a[rz]') | list
 ['bar', 'baz']
->>> xrange(-10, 10) | grep(lambda x: x % 7 == 1) | list
+>>> range(-10, 10) | grep(lambda x: x % 7 == 1) | list
 [-6, 1, 8]
 
 >>> ['foo', 'bar', 'quux'] | cut[-2:] | list
 ['oo', 'ar', 'ux']
 
->>> sum(xrange(100) | select[i] | tuple != (range(100)[i],) for i in xrange(-3, 4))
+>>> sum(range(100) | select[i] | tuple != (list(range(100))[i],) for i in range(-3, 4))
 0
->>> sum(xrange(100) | select[i:j:k] | list != range(100)[i:j:k] for i in xrange(-3, 4) for j in xrange(-3, 4) for k in xrange(-3, 4) if k != 0)
+>>> sum(range(100) | select[i:j:k] | list != list(range(100))[i:j:k] for i in range(-3, 4) for j in range(-3, 4) for k in range(-3, 4) if k != 0)
 0
 
 >>> sort([4, 2, 1, 3]) | list
 [1, 2, 3, 4]
 >>> cat(['foo', 'bar', 'qaax']) | sort(key = lambda x: x[1:3]) | list
 ['qaax', 'bar', 'foo']
->>> print '-'.join(['foo', 'bar', 'quux'] | cat | sort)
+>>> print('-'.join(['foo', 'bar', 'quux'] | cat | sort))
 bar-foo-quux
 
 >>> cat([1, 2, 3, 3, 2, 1]) | uniq | list
@@ -63,16 +63,16 @@ bar-foo-quux
 
 >>> wc(['foo', 'bar', 'quux'])
 3
->>> cat(None for x in xrange(0, 7) for y in xrange(0, x) for z in xrange(y, x)) | wc
+>>> cat(None for x in range(0, 7) for y in range(0, x) for z in range(y, x)) | wc
 56
 
 >>> tmp = []
->>> cat(tmp.__iadd__([x]) for x in xrange(5)) | slurp
+>>> cat(tmp.__iadd__([x]) for x in range(5)) | slurp
 >>> tmp
 [0, 1, 2, 3, 4]
 >>> del tmp
 
->>> xrange(7) | split(3) | list
+>>> range(7) | split(3) | list
 [(0, 1, 2), (3, 4, 5), (6,)]
 '''
 
