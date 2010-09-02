@@ -87,7 +87,7 @@ class BrokenPipe(Exception):
 	def __iter__(self):
 		return self
 	
-	def next(self):
+	def __next__(self):
 		raise self
 
 class _singleton(object):
@@ -101,7 +101,7 @@ class STDIN(_singleton):
 	def __iter__(self):
 		return self
 	
-	def next(self):
+	def __next__(self):
 		frame = sys._getframe()
 		try:
 			while frame:
@@ -110,7 +110,7 @@ class STDIN(_singleton):
 				except KeyError:
 					frame = frame.f_back
 					continue
-				return iterator.next()
+				return next(iterator)
 		finally:
 			frame = None
 			iterator = None
@@ -229,7 +229,7 @@ class grep(Pipe):
 
 	def __init__(self, test, *iterables):
 
-		if isinstance(test, basestring):
+		if isinstance(test, str):
 			self.test = re.compile(test).search
 		elif isinstance(test, grep.REPattern):
 			self.test = test.search
@@ -239,7 +239,7 @@ class grep(Pipe):
 			except AttributeError:
 				raise TypeError()
 		if iterables:
-			Pipe.__init__(self, itertools.ifilter(self.test, _chain(iterables)))
+			Pipe.__init__(self, filter(self.test, _chain(iterables)))
 		else:
 			Pipe.__init__(self)
 
@@ -335,7 +335,7 @@ class _select(Pipe):
 			return result
 		else:
 			# FIXME: do it more efficiently
-			if isinstance(iterable, (list, tuple, basestring)):
+			if isinstance(iterable, (list, tuple, str)):
 				return iterable[slice]
 			else:
 				return tuple(iterable)[slice]
@@ -394,7 +394,7 @@ class uniq(Pipe):
 
 	@classmethod
 	def _uniq(self, iterable):
-		return itertools.imap(
+		return map(
 			operator.itemgetter(0),
 			itertools.groupby(iterable)
 		)
@@ -434,9 +434,9 @@ class nl(Pipe):
 
 	def __init__(self, *iterables):
 		if iterables:
-			iterator = enumerate(_chain((xrange(self.start),) + iterables))
-			for i in xrange(self.start):
-				iterator.next()
+			iterator = enumerate(_chain((range(self.start),) + iterables))
+			for i in range(self.start):
+				next(iterator)
 			Pipe.__init__(self, iterator)
 		else:
 			Pipe.__init__(self)
