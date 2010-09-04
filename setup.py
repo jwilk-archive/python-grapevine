@@ -8,6 +8,7 @@ Intended Audience :: Developers
 License :: OSI Approved :: GNU General Public License (GPL)
 Operating System :: OS Independent
 Programming Language :: Python
+Programming Language :: Python :: 2
 Topic :: Software Development :: Libraries :: Python Modules'''.split('\n')
 
 from distutils.core import setup
