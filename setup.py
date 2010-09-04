@@ -5,17 +5,18 @@
 classifiers = '''\
 Development Status :: 3 - Alpha
 Intended Audience :: Developers
-License :: OSI Approved :: GNU General Public License (GPL)
+License :: OSI Approved :: MIT License
 Operating System :: OS Independent
 Programming Language :: Python
+Programming Language :: Python :: 3
 Topic :: Software Development :: Libraries :: Python Modules'''.split('\n')
 
 from distutils.core import setup
 
 setup(
 	name = 'python-pipeline',
-	version = '0.1.2+py3k',
-	license = 'GNU GPL 2',
+	version = '0.1.3+py3k',
+	license = 'MIT',
 	platforms = ['any'],
 	description = 'Iterator pipelines',
 	long_description = __doc__.strip(),
