@@ -14,7 +14,7 @@ from distutils.core import setup
 
 setup(
 	name = 'python-pipeline',
-	version = '0.1.2',
+	version = '0.1.3',
 	license = 'GNU GPL 2',
 	platforms = ['any'],
 	description = 'Iterator pipelines',
