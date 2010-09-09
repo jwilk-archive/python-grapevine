@@ -12,6 +12,9 @@ Programming Language :: Python :: 2
 Topic :: Software Development :: Libraries :: Python Modules'''.split('\n')
 
 from distutils.core import setup
+import os
+
+os.putenv('TAR_OPTIONS', '--owner root --group root --mode a+rX')
 
 setup(
 	name = 'python-pipeline',
