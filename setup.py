@@ -2,14 +2,15 @@
 *python-pipeline* lets you create pipelines of iterators.
 '''
 
-classifiers = '''\
+classifiers = '''
 Development Status :: 3 - Alpha
 Intended Audience :: Developers
 License :: OSI Approved :: MIT License
 Operating System :: OS Independent
 Programming Language :: Python
 Programming Language :: Python :: 3
-Topic :: Software Development :: Libraries :: Python Modules'''.split('\n')
+Topic :: Software Development :: Libraries :: Python Modules
+'''.strip().splitlines()
 
 from distutils.core import setup
 import os
