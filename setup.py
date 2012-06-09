@@ -1,6 +1,6 @@
 '''
 *grapevine* (formerly known as *python-pipeline*) lets you create pipelines of
-iterators
+iterators.
 '''
 
 classifiers = '''
@@ -34,7 +34,7 @@ setup(
     version = get_version(),
     license = 'MIT',
     platforms = ['any'],
-    description = 'Iterator pipelines',
+    description = 'iterator pipelines',
     long_description = __doc__.strip(),
     classifiers = classifiers,
     url = 'http://jwilk.net/software/python-grapevine',
