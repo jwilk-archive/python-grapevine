@@ -4,6 +4,10 @@ iterators.
 '''
 
 import distutils.core
+try:
+    import sphinx.setup_command as sphinx_setup_command
+except ImportError:
+    sphinx_setup_command = None
 
 classifiers = '''
 Development Status :: 3 - Alpha
@@ -29,6 +33,11 @@ def get_version():
     except LookupError:
         raise IOError('unexpected end-of-file')
 
+cmdclass = {}
+
+if sphinx_setup_command is not None:
+    cmdclass['build_doc'] = sphinx_setup_command.BuildDoc
+
 distutils.core.setup(
     name = 'grapevine',
     version = get_version(),
@@ -40,7 +49,8 @@ distutils.core.setup(
     url = 'http://jwilk.net/software/python-grapevine',
     author = 'Jakub Wilk',
     author_email = 'jwilk@jwilk.net',
-    py_modules = ['grapevine']
+    py_modules = ['grapevine'],
+    cmdclass = cmdclass,
 )
 
 # vim:ts=4 sw=4 et

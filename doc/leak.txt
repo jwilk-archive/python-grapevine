@@ -1,0 +1,24 @@
+========
+``leak``
+========
+
+remove magic
+
+Usage
+-----
+
+* ``<pipelined-iterable> | leak``
+* ``leak(<pipelined-iterable>)``
+
+Examples
+--------
+
+>>> from grapevine import *
+
+>>> leak(dev_null)
+<tuple_iterator object at 0xfeedface>
+
+>>> cat([1, 2, 3]) | leak
+<list_iterator object at 0xdeadf00d>
+
+.. vim:ts=3 sw=3 ft=rst
