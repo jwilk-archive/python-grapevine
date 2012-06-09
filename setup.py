@@ -1,7 +1,9 @@
 '''
 *grapevine* (formerly known as *python-pipeline*) lets you create pipelines of
-iterators
+iterators.
 '''
+
+import distutils.core
 
 classifiers = '''
 Development Status :: 3 - Alpha
@@ -13,7 +15,6 @@ Programming Language :: Python :: 3
 Topic :: Software Development :: Libraries :: Python Modules
 '''.strip().splitlines()
 
-from distutils.core import setup
 
 def get_version():
     d = {}
@@ -29,12 +30,12 @@ def get_version():
     except LookupError:
         raise IOError('unexpected end-of-file')
 
-setup(
+distutils.core.setup(
     name = 'grapevine',
     version = get_version(),
     license = 'MIT',
     platforms = ['any'],
-    description = 'Iterator pipelines',
+    description = 'iterator pipelines',
     long_description = __doc__.strip(),
     classifiers = classifiers,
     url = 'http://jwilk.net/software/python-grapevine',
