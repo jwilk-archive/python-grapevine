@@ -1,5 +1,6 @@
 '''
-*python-pipeline* lets you create pipelines of iterators.
+*grapevine* (formerly known as *python-pipeline*) lets you create pipelines of
+iterators
 '''
 
 classifiers = '''
@@ -15,17 +16,17 @@ Topic :: Software Development :: Libraries :: Python Modules
 from distutils.core import setup
 
 setup(
-	name = 'python-pipeline',
-	version = '0.1.3+py3k',
+	name = 'grapevine',
+	version = '1.0+py3k',
 	license = 'MIT',
 	platforms = ['any'],
 	description = 'Iterator pipelines',
 	long_description = __doc__.strip(),
 	classifiers = classifiers,
-	url = 'http://python-pipeline.googlecode.com/',
+	url = 'http://jwilk.net/software/python-grapevine',
 	author = 'Jakub Wilk',
 	author_email = 'jwilk@jwilk.net',
-	py_modules = ['pipeline']
+	py_modules = ['grapevine']
 )
 
 # vim:ts=4 sw=4 noet
