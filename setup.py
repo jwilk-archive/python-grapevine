@@ -15,7 +15,6 @@ Programming Language :: Python :: 2
 Topic :: Software Development :: Libraries :: Python Modules
 '''.strip().splitlines()
 
-
 def get_version():
     d = {}
     file = open('grapevine.py')
