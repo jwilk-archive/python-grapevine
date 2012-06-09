@@ -16,17 +16,17 @@ Topic :: Software Development :: Libraries :: Python Modules
 from distutils.core import setup
 
 setup(
-	name = 'grapevine',
-	version = '1.0+py3k',
-	license = 'MIT',
-	platforms = ['any'],
-	description = 'Iterator pipelines',
-	long_description = __doc__.strip(),
-	classifiers = classifiers,
-	url = 'http://jwilk.net/software/python-grapevine',
-	author = 'Jakub Wilk',
-	author_email = 'jwilk@jwilk.net',
-	py_modules = ['grapevine']
+    name = 'grapevine',
+    version = '1.0+py3k',
+    license = 'MIT',
+    platforms = ['any'],
+    description = 'Iterator pipelines',
+    long_description = __doc__.strip(),
+    classifiers = classifiers,
+    url = 'http://jwilk.net/software/python-grapevine',
+    author = 'Jakub Wilk',
+    author_email = 'jwilk@jwilk.net',
+    py_modules = ['grapevine']
 )
 
-# vim:ts=4 sw=4 noet
+# vim:ts=4 sw=4 et
