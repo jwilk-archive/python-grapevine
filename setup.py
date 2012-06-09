@@ -15,9 +15,23 @@ Topic :: Software Development :: Libraries :: Python Modules
 
 from distutils.core import setup
 
+def get_version():
+    d = {}
+    file = open('grapevine.py')
+    try:
+        for line in file:
+            if line.startswith('__version__ ='):
+                exec(line, d)
+    finally:
+        file.close()
+    try:
+        return d['__version__']
+    except LookupError:
+        raise IOError('unexpected end-of-file')
+
 setup(
     name = 'grapevine',
-    version = '1.0',
+    version = get_version(),
     license = 'MIT',
     platforms = ['any'],
     description = 'Iterator pipelines',
