@@ -7,6 +7,6 @@ install:
 - pip install sphinx
 script:
 - python -m doctest -v grapevine.py
-- PYTHONPATH=$PWD sphinx-build -b doctest doc tmp
+- PYTHONPATH=$PWD sphinx-build -b doctest doc/api tmp
 
 # vim:ts=2 sts=2 sw=2 et

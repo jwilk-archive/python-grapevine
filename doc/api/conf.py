@@ -18,7 +18,7 @@ def get_version():
     d = {}
     path = os.path.join(
         os.path.dirname(__file__),
-        os.pardir,
+        os.pardir, os.pardir,
         'grapevine.py'
     )
     file = open(path)
