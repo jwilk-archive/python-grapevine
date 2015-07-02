@@ -38,18 +38,18 @@ if sphinx_setup_command is not None:
     cmdclass['build_doc'] = sphinx_setup_command.BuildDoc
 
 distutils.core.setup(
-    name = 'grapevine',
-    version = get_version(),
-    license = 'MIT',
-    platforms = ['any'],
-    description = 'iterator pipelines',
-    long_description = __doc__.strip(),
-    classifiers = classifiers,
-    url = 'http://jwilk.net/software/python-grapevine',
-    author = 'Jakub Wilk',
-    author_email = 'jwilk@jwilk.net',
-    py_modules = ['grapevine'],
-    cmdclass = cmdclass,
+    name='grapevine',
+    version=get_version(),
+    license='MIT',
+    platforms=['any'],
+    description='iterator pipelines',
+    long_description=__doc__.strip(),
+    classifiers=classifiers,
+    url='http://jwilk.net/software/python-grapevine',
+    author='Jakub Wilk',
+    author_email='jwilk@jwilk.net',
+    py_modules=['grapevine'],
+    cmdclass=cmdclass,
 )
 
 # vim:ts=4 sts=4 sw=4 et

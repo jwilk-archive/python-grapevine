@@ -394,7 +394,7 @@ class sort(Pipe):
 
     def __init__(self, *iterables, **kwargs):
         def _sort(iterables, key, cmp, reverse):
-            sorted_ = sorted(_chain(iterables), key = key, cmp = cmp, reverse = reverse)
+            sorted_ = sorted(_chain(iterables), key=key, cmp=cmp, reverse=reverse)
             for item in sorted_:
                 yield item
         self.key = kwargs.get('key')
@@ -407,7 +407,7 @@ class sort(Pipe):
 
     def __call__(self, iterable):
         if self.iterator is None:
-            return self.__class__(iterable, key = self.key, cmp = self.cmp, reverse = self.reverse)
+            return self.__class__(iterable, key=self.key, cmp=self.cmp, reverse=self.reverse)
         else:
             return Pipe.__call__(self, iterable)
 
@@ -484,7 +484,7 @@ def slurp(iterable):
     for x in iterable:
         pass
 
-def seq(x, y = None, z = None):
+def seq(x, y=None, z=None):
 
     def _seq(first, step, last):
         while first <= last:
