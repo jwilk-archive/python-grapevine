@@ -11,8 +11,8 @@ master_doc = 'index'
 html_theme = 'haiku'
 pygments_style = 'sphinx'
 
-project = u'grapevine'
-copyright = u'2007-2015, Jakub Wilk'
+project = 'grapevine'
+copyright = '2007-2015, Jakub Wilk'
 
 def get_version():
     d = {}
