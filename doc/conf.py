@@ -28,10 +28,7 @@ def get_version():
                 exec(line, d)
     finally:
         file.close()
-    try:
-        return d['__version__']
-    except LookupError:
-        raise IOError('unexpected end-of-file')
+    return d['__version__']
 
 release = version = get_version()
 
