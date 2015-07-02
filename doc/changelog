@@ -1,0 +1,12 @@
+python-grapevine (1.1) UNRELEASED; urgency=low
+
+  * Drop support for Python 2.5.
+  * Use HTTPS URLs when they are available in documentation.
+
+ -- Jakub Wilk <jwilk@jwilk.net>  Thu, 02 Jul 2015 17:26:22 +0200
+
+python-grapevine (1.0) unstable; urgency=low
+
+  * Initial release under this name.
+
+ -- Jakub Wilk <jwilk@debian.org>  Sun, 10 Jun 2012 12:08:13 +0200
