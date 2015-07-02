@@ -538,4 +538,4 @@ class split(Pipe):
 __author__ = 'Jakub Wilk <jwilk@jwilk.net>'
 __version__ = '1.1'
 
-# vim:ts=4 sw=4 et
+# vim:ts=4 sts=4 sw=4 et
