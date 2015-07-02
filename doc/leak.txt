@@ -15,10 +15,10 @@ Examples
 
 >>> from grapevine import *
 
->>> leak(dev_null)
-<tupleiterator object at 0xfeedface>
+>>> leak(dev_null)  # doctest: +ELLIPSIS
+<tupleiterator object at 0x...>
 
->>> cat([1, 2, 3]) | leak
-<listiterator object at 0xdeadf00d>
+>>> cat([1, 2, 3]) | leak  # doctest: +ELLIPSIS
+<listiterator object at 0x...>
 
 .. vim:ts=3 sw=3 ft=rst
