@@ -13,7 +13,7 @@ Usage
 * ``sort(<iterable>…, <keyword-argument>…)``
 
 ``sort`` takes additional keyword arguments: ``cmp``, ``key`` and ``reverse``.
-See `Python documentation <http://docs.python.org/library/stdtypes.html#mutable-sequence-types>`_ for details.
+See `Python documentation <https://docs.python.org/library/stdtypes.html#mutable-sequence-types>`_ for details.
 
 Examples
 --------
