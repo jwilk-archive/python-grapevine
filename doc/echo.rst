@@ -20,4 +20,4 @@ Examples
 
  * `GNU coreutils: echo <http://www.gnu.org/software/coreutils/manual/html_node/echo-invocation.html>`_
 
-.. vim:ts=3 sts=3 sw=3 et ft=rst
+.. vim:ts=3 sts=3 sw=3 et

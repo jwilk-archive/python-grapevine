@@ -5,7 +5,7 @@ extensions = [
     'sphinx.ext.doctest',
 ]
 
-source_suffix = '.txt'
+source_suffix = '.rst'
 master_doc = 'index'
 
 html_theme = 'haiku'

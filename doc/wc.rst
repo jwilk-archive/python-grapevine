@@ -23,4 +23,4 @@ Examples
 
  * `GNU coreutils: wc <http://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html>`_
 
-.. vim:ts=3 sts=3 sw=3 et ft=rst
+.. vim:ts=3 sts=3 sw=3 et

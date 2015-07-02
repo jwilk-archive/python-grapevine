@@ -37,4 +37,4 @@ Examples
  * `Python Tutorial: Generators <https://docs.python.org/tutorial/classes.html#generators>`_
  * `Python Tutorial: Generator Expressions <https://docs.python.org/tutorial/classes.html#generator-expressions>`_
 
-.. vim:ts=3 sts=3 sw=3 et ft=rst
+.. vim:ts=3 sts=3 sw=3 et

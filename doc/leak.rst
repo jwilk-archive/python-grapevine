@@ -21,4 +21,4 @@ Examples
 >>> cat([1, 2, 3]) | leak  # doctest: +ELLIPSIS
 <...iterator object at 0x...>
 
-.. vim:ts=3 sts=3 sw=3 et ft=rst
+.. vim:ts=3 sts=3 sw=3 et

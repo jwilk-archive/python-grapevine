@@ -24,4 +24,4 @@ Examples
  * `The Jargon File: /dev/null <http://www.catb.org/esr/jargon/html/0/dev-null.html>`_
  * `Python Library Reference: os.devnull <https://docs.python.org/library/os.html#os.devnull>`_
 
-.. vim:ts=3 sts=3 sw=3 et ft=rst
+.. vim:ts=3 sts=3 sw=3 et
