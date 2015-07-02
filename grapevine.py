@@ -457,9 +457,7 @@ class nl(Pipe):
 
     def __init__(self, *iterables):
         if iterables:
-            iterator = enumerate(_chain((xrange(self.start),) + iterables))
-            for i in xrange(self.start):
-                iterator.next()
+            iterator = enumerate(_chain(*iterables), self.start)
             Pipe.__init__(self, iterator)
         else:
             Pipe.__init__(self)
