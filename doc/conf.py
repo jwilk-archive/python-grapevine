@@ -12,7 +12,7 @@ html_theme = 'haiku'
 pygments_style = 'sphinx'
 
 project = u'grapevine'
-copyright = u'2007-2012, Jakub Wilk'
+copyright = u'2007-2015, Jakub Wilk'
 
 def get_version():
     d = {}
