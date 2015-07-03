@@ -2,8 +2,9 @@ python-grapevine (1.1) UNRELEASED; urgency=low
 
   * Drop support for Python 2.5.
   * Use HTTPS URLs when they are available in documentation.
+  * Fix “!=” comparisons for the STDIN object.
 
- -- Jakub Wilk <jwilk@jwilk.net>  Thu, 02 Jul 2015 17:26:22 +0200
+ -- Jakub Wilk <jwilk@jwilk.net>  Fri, 03 Jul 2015 21:52:02 +0200
 
 python-grapevine (1.0) unstable; urgency=low
 

@@ -144,6 +144,9 @@ class STDIN(_singleton):
     def __eq__(self, other):
         return self.__class__ == other.__class__
 
+    def __ne__(self, other):
+        return self.__class__ != other.__class__
+
 STDIN = STDIN()
 
 def _feed_iterator(iterator, stdin):
