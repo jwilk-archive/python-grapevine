@@ -22,7 +22,7 @@ foo
 bar
 quux
 >>> tmp = []
->>> cat(tmp.__iadd__([x]) for x in xrange(5)) | slurp
+>>> cat(tmp.__iadd__([x]) for x in range(5)) | slurp
 >>> tmp
 [0, 1, 2, 3, 4]
 

@@ -13,7 +13,7 @@ Examples
 --------
 
 >>> from grapevine import *
->>> xrange(7) | split(3) | list
+>>> range(7) | split(3) | list
 [(0, 1, 2), (3, 4, 5), (6,)]
 
 .. seealso::

@@ -16,7 +16,7 @@ Examples
 >>> from grapevine import *
 >>> wc(['foo', 'bar', 'quux'])
 3
->>> cat(None for x in xrange(0, 7) for y in xrange(0, x) for z in xrange(y, x)) | wc
+>>> cat(None for x in range(0, 7) for y in range(0, x) for z in range(y, x)) | wc
 56
 
 .. seealso::

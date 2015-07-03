@@ -29,7 +29,7 @@ Examples
 ...                     yield n
 ...                     n = 0
 ...
->>> xrange(10) | cat([4], tmp(), [2]) | tuple
+>>> range(10) | cat([4], tmp(), [2]) | tuple
 (4, 15, 13, 17, 2)
 
 .. seealso::

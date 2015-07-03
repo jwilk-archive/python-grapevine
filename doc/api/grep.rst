@@ -21,7 +21,7 @@ Examples
 >>> from grapevine import *
 >>> grep('a[rz]', ['foo', 'bar', 'baz']) | tuple
 ('bar', 'baz')
->>> xrange(-10, 10) | grep(lambda x: x % 7 == 1) | tuple
+>>> range(-10, 10) | grep(lambda x: x % 7 == 1) | tuple
 (-6, 1, 8)
 
 .. seealso::

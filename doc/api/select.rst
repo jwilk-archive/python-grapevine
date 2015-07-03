@@ -16,9 +16,9 @@ Examples
 >>> from grapevine import *
 >>> ('foo', 'bar', 'quux') | select[-2:] | tuple
 ('bar', 'quux')
->>> sum(xrange(100) | select[i] | tuple != (range(100)[i],) for i in xrange(-3, 4))
+>>> sum(range(100) | select[i] | tuple != (range(100)[i],) for i in range(-3, 4))
 0
->>> sum(xrange(100) | select[i:j:k] | list != range(100)[i:j:k] for i in xrange(-3, 4) for j in xrange(-3, 4) for k in xrange(-3, 4) if k != 0)
+>>> sum(range(100) | select[i:j:k] | list != range(100)[i:j:k] for i in range(-3, 4) for j in range(-3, 4) for k in range(-3, 4) if k != 0)
 0
 
 .. seealso::
