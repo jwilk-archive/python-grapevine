@@ -249,7 +249,7 @@ cat = cat()
 
 class grep(Pipe):
 
-    __slots__ = 'test',
+    __slots__ = ('test',)
     REPattern = type(re.compile(''))
 
     def __init__(self, test, *iterables):
@@ -286,7 +286,7 @@ def _slice_repr(_slice):
             value = getattr(_slice, name)
             if value is not None:
                 value = repr(value)
-            values += value,
+            values += [value]
         (start, stop, step) = values
         if step is None:
             return '%s:%s' % (start or '', stop or '')
@@ -295,7 +295,7 @@ def _slice_repr(_slice):
 
 class _cut(Pipe):
 
-    __slots__ = 'slice',
+    __slots__ = ('slice',)
 
     def __init__(self, slice):
         Pipe.__init__(self)
@@ -519,7 +519,7 @@ class leak(object):
 
 class split(Pipe):
 
-    __slots__ = 'n',
+    __slots__ = ('n',)
 
     def __init__(self, n):
         if n >= 1:
