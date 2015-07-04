@@ -301,7 +301,8 @@ class _cut(Pipe):
         Pipe.__init__(self)
         self.slice = slice
 
-    def __call__(self, iterable):
+    def __call__(self, *iterables):
+        iterable = _chain(iterables)
         return Pipe(item[self.slice] for item in iterable)
 
     def __repr__(self):
