@@ -3,7 +3,7 @@
 ========
 
 yield the first items
-  
+
 Usage
 -----
 

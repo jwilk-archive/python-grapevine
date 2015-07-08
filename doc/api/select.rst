@@ -3,7 +3,7 @@
 ==========
 
 slice an iterable
-  
+
 Usage
 -----
 

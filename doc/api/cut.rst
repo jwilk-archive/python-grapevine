@@ -3,7 +3,7 @@
 =======
 
 yield a slice of every item
- 
+
 Usage
 -----
 

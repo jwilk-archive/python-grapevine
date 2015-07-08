@@ -3,7 +3,7 @@
 =========
 
 split an iterable into fixed-sized pieces
-  
+
 Usage
 -----
 

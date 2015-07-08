@@ -16,8 +16,8 @@ Examples
 >>> dev_null | tuple
 ()
 >>> for x in dev_null:
-...   raise Exception  
-... 
+...   raise Exception
+...
 
 .. seealso::
 
