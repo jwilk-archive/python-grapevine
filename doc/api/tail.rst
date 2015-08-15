@@ -7,7 +7,7 @@ yield the last items
 Usage
 -----
 
-* ``<iterable> | tail[<int>]``
+* ``<iterable> | tail(<int>)``
 
 Examples
 --------
