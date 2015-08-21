@@ -18,6 +18,6 @@ Examples
 
 .. seealso::
 
- * `GNU coreutils: split <http://www.gnu.org/software/coreutils/manual/html_node/split-invocation.html>`_
+ * `GNU coreutils: split <https://www.gnu.org/software/coreutils/manual/html_node/split-invocation.html>`_
 
 .. vim:ts=3 sts=3 sw=3 et

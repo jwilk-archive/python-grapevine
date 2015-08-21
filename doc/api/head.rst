@@ -22,6 +22,6 @@ Examples
 
  * :doc:`tail`
  * :doc:`select`
- * `GNU coreutils: head <http://www.gnu.org/software/coreutils/manual/html_node/head-invocation.html>`_
+ * `GNU coreutils: head <https://www.gnu.org/software/coreutils/manual/html_node/head-invocation.html>`_
 
 .. vim:ts=3 sts=3 sw=3 et

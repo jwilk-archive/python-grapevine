@@ -24,6 +24,6 @@ Examples
 
 .. seealso::
 
- * `GNU coreutils: seq <http://www.gnu.org/software/coreutils/manual/html_node/seq-invocation.html>`_
+ * `GNU coreutils: seq <https://www.gnu.org/software/coreutils/manual/html_node/seq-invocation.html>`_
 
 .. vim:ts=3 sts=3 sw=3 et

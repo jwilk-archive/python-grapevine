@@ -20,6 +20,6 @@ Examples
 
 .. seealso::
 
- * `GNU coreutils: yes <http://www.gnu.org/software/coreutils/manual/html_node/yes-invocation.html#yes-invocation>`_
+ * `GNU coreutils: yes <https://www.gnu.org/software/coreutils/manual/html_node/yes-invocation.html#yes-invocation>`_
 
 .. vim:ts=3 sts=3 sw=3 et

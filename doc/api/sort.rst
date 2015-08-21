@@ -28,6 +28,6 @@ bar-foo-quux
 
 .. seealso::
 
- * `GNU coreutils: sort <http://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html>`_
+ * `GNU coreutils: sort <https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html>`_
 
 .. vim:ts=3 sts=3 sw=3 et

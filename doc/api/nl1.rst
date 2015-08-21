@@ -22,6 +22,6 @@ True
 .. seealso::
 
  * :doc:`nl0`
- * `GNU coreutils: nl <http://www.gnu.org/software/coreutils/manual/html_node/nl-invocation.html>`_
+ * `GNU coreutils: nl <https://www.gnu.org/software/coreutils/manual/html_node/nl-invocation.html>`_
 
 .. vim:ts=3 sts=3 sw=3 et

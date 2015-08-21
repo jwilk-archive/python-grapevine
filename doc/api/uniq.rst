@@ -19,6 +19,6 @@ Examples
 .. seealso::
 
  * :doc:`zuniq`
- * `GNU coreutils: uniq <http://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html>`_
+ * `GNU coreutils: uniq <https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html>`_
 
 .. vim:ts=3 sts=3 sw=3 et
