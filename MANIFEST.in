@@ -1,4 +1,4 @@
 include MANIFEST.in
 include grapevine.py
 include setup.py
-recursive-include doc *.py *.txt
+recursive-include doc *.py *.rst
