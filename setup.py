@@ -63,7 +63,6 @@ distutils.core.setup(
     name='grapevine',
     version=get_version(),
     license='MIT',
-    platforms=['any'],
     description='iterator pipelines',
     long_description=__doc__.strip(),
     classifiers=classifiers,
