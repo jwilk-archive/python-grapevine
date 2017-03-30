@@ -4,7 +4,8 @@ python:
 - "2.7"
 - "pypy"
 install:
-- pip install sphinx
+- if [ "$TRAVIS_PYTHON_VERSION" = '2.6' ]; then SPHINX_VERSION=1.4.9; fi
+- pip install sphinx${SPHINX_VERSION:+==$SPHINX_VERSION}
 script:
 - python -m doctest -v grapevine.py
 - PYTHONPATH=$PWD sphinx-build -b doctest doc/api tmp
