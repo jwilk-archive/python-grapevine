@@ -1,4 +1,6 @@
 include MANIFEST.in
+
+include LICENSE
 include doc/changelog
 include grapevine.py
 include setup.py
