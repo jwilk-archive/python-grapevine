@@ -9,5 +9,6 @@ install:
 script:
 - python -m doctest -v grapevine.py
 - PYTHONPATH=$PWD sphinx-build -b doctest doc/api tmp
+- LC_ALL=C python setup.py --version
 
 # vim:ts=2 sts=2 sw=2 et
