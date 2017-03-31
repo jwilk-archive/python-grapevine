@@ -1,3 +1,4 @@
+import io
 import os
 
 extensions = [
@@ -14,20 +15,13 @@ project = 'grapevine'
 copyright = '2007-2015, Jakub Wilk'
 
 def get_version():
-    d = {}
     path = os.path.join(
         os.path.dirname(__file__),
-        os.pardir, os.pardir,
-        'grapevine.py'
+        '../changelog'
     )
-    file = open(path)
-    try:
-        for line in file:
-            if line.startswith('__version__ ='):
-                exec(line, d)
-    finally:
-        file.close()
-    return d['__version__']
+    with io.open(path, encoding='UTF-8') as file:
+        line = file.readline()
+    return line.split()[1].strip('()')
 
 release = version = get_version()
 
