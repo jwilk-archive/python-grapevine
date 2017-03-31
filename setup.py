@@ -25,6 +25,7 @@
 iterators.
 '''
 
+import io
 import os
 
 import distutils.core
@@ -61,7 +62,7 @@ Topic :: Software Development :: Libraries :: Python Modules
 
 def get_version():
     d = {}
-    file = open('grapevine.py')
+    file = io.open('grapevine.py', encoding='UTF-8')
     try:
         for line in file:
             if line.startswith('__version__ ='):
