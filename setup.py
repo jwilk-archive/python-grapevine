@@ -31,6 +31,8 @@ import os
 import distutils.core
 from distutils.command.sdist import sdist as distutils_sdist
 
+int(*['0'], base=0)  # Python >= 2.6 is required
+
 try:
     import sphinx.setup_command as sphinx_setup_command
 except ImportError:
