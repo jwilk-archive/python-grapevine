@@ -62,13 +62,10 @@ Topic :: Software Development :: Libraries :: Python Modules
 
 def get_version():
     d = {}
-    file = io.open('grapevine.py', encoding='UTF-8')
-    try:
+    with io.open('grapevine.py', encoding='UTF-8') as file:
         for line in file:
             if line.startswith('__version__ ='):
                 exec(line, d)
-    finally:
-        file.close()
     return d['__version__']
 
 cmdclass = dict(
