@@ -61,12 +61,9 @@ Topic :: Software Development :: Libraries :: Python Modules
 '''.strip().splitlines()
 
 def get_version():
-    d = {}
-    with io.open('grapevine.py', encoding='UTF-8') as file:
-        for line in file:
-            if line.startswith('__version__ ='):
-                exec(line, d)
-    return d['__version__']
+    with io.open('doc/changelog', encoding='UTF-8') as file:
+        line = file.readline()
+    return line.split()[1].strip('()')
 
 cmdclass = dict(
     sdist=cmd_sdist,
