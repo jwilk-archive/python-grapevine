@@ -31,12 +31,12 @@ import os
 import distutils.core
 from distutils.command.sdist import sdist as distutils_sdist
 
-b''  # Python >= 2.6 is required
-
 try:
     import sphinx.setup_command as sphinx_setup_command
 except ImportError:
     sphinx_setup_command = None
+
+b''  # Python >= 2.6 is required
 
 class cmd_sdist(distutils_sdist):
 
